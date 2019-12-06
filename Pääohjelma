@@ -1,0 +1,82 @@
+import java.util.HashMap;
+import java.util.ArrayList;
+
+public class Arvosanajakauma {
+    
+    private HashMap<String, Integer> taulu;
+    
+    private ArrayList<Integer> kaikki; 
+    private ArrayList<Integer> hyvaksytyt;
+    private ArrayList<Integer> nolla;
+    private ArrayList<Integer> yksi;
+    private ArrayList<Integer> kaksi;
+    private ArrayList<Integer> kolme;
+    private ArrayList<Integer> nelja;
+    private ArrayList<Integer> viisi;
+
+    private int hyvaksytty;
+    private int yhteensa;
+    
+    public Arvosanajakauma() {
+        this.taulu = new HashMap<>();
+        this.nolla = new ArrayList<>();
+        this.yksi = new ArrayList<>();
+        this.kaksi = new ArrayList<>();
+        this.kolme = new ArrayList<>();
+        this.nelja = new ArrayList<>();
+        this.viisi = new ArrayList<>();
+
+    }
+    
+    public void lisää(int luku) {
+        if (luku < 50) {
+            this.nolla.add(luku);
+        }
+        else if (luku < 60) {
+            this.yksi.add(luku);
+        }
+        else if (luku < 70) {
+            this.kaksi.add(luku);
+        }
+        else if (luku < 80) {
+            this.kolme.add(luku);
+        }
+        else if (luku < 90) {
+            this.nelja.add(luku);
+        }
+        else if (luku <= 100) {
+            this.viisi.add(luku);
+        }
+    }
+    
+    public int maaraYksi() {
+        return this.yksi.size();
+    }
+    
+    public int maaraKaksi() {
+        return this.kaksi.size();
+    }
+    
+     public int maaraKolme() {
+        return this.kolme.size();
+    }
+     
+    public int maaraNelja() {
+        return this.nelja.size();
+    }    
+    
+     public int maaraViisi() {
+        return this.viisi.size();
+    }
+     
+     
+    public static void tulostaTahtia(int maara) {
+        int indeksi = 0;
+        while (indeksi < maara) {
+            System.out.print("*");
+            indeksi++;
+
+        }
+    }
+    
+}
