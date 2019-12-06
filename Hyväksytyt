@@ -1,0 +1,56 @@
+import java.util.ArrayList;
+
+public class Hyväksytyt {
+    
+    private ArrayList<Integer> hyvaksytyt;
+    private ArrayList<Integer> kaikki;
+
+    private double maaraYli;
+    private double yhteensaKaikki;
+
+    public Hyväksytyt() {
+        this.hyvaksytyt = new ArrayList<>();
+        this.kaikki = new ArrayList<>();
+        this.maaraYli = 0;
+        this.yhteensaKaikki = 0;
+    } 
+    
+    public void lisaa(int luku) {
+        if (luku >= 50 && luku <= 100) {
+            this.hyvaksytyt.add(luku);
+            maaraYli++;
+        }
+        if (luku >= 0 && luku < 100) {
+        this.kaikki.add(luku);
+        yhteensaKaikki++;
+    }
+        
+    }
+    
+    public double keskiarvoKaikki() {
+        double summa = 0;
+        for (int luku: this.kaikki) {
+            summa = summa + luku;
+        }
+        return summa / yhteensaKaikki;
+    }
+    
+    public double keskiarvoHyvaksytyt() {
+        double summa = 0;
+        for (int luku: this.hyvaksytyt) {
+            summa = summa + luku;
+        }
+            return summa / maaraYli;
+        
+    }
+    
+    public double maaraHyvaksytyt() {
+       
+            return this.maaraYli;
+    }
+    public double maaraKaikki() {
+       
+            return this.yhteensaKaikki;
+    }    
+    
+}
